@@ -15,6 +15,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tomtom/tcomment_vim'
+Plug 'ekalinin/Dockerfile.vim'
 
 call plug#end()
 
@@ -72,4 +73,3 @@ set colorcolumn=81
 
 " Fix indentation across page
 map <Leader>i mmgg=G'm<CR>
-

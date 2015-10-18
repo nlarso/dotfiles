@@ -23,7 +23,7 @@ call plug#end()
 syntax enable
 set t_Co=256
 set background=dark
-let g:solarized_termcolors=256
+let g:solarized_termcolors=16
 colorscheme solarized
 
 set autowriteall        " save file on buffer switch

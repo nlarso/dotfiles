@@ -1,3 +1,15 @@
+# Docker
+eval "$(docker-machine env dev)"
+export DOCKER_HOST="tcp://192.168.99.100:2376"
+docker_clean() {
+  # Kill all running containers
+  docker ps --quiet | xargs docker kill
+  # Remove all stopped containers except busybox
+  docker ps --all --quiet --no-trunc | xargs docker rm
+  # Remove all untagged images
+  docker images --quiet --filter "dangling=true" | xargs docker rmi
+}
+
 ### Aliases
 alias be="bundle exec "
 alias bake="bundle exec rake "

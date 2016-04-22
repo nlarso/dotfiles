@@ -6,16 +6,22 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'SirVer/ultisnips'
 Plug 'altercation/vim-colors-solarized'
-Plug 'kien/ctrlp.vim'
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-fugitive'
-Plug 'vim-ruby/vim-ruby'
-Plug 'tomtom/tcomment_vim'
 Plug 'ekalinin/Dockerfile.vim'
+Plug 'jeetsukumaran/vim-indentwise'
+Plug 'kien/ctrlp.vim'
+Plug 'mxw/vim-jsx'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'pangloss/vim-javascript'
+Plug 'scrooloose/nerdtree'
+Plug 'slim-template/vim-slim'
+Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'vim-ruby/vim-ruby'
 
 call plug#end()
 
@@ -44,6 +50,14 @@ set softtabstop=2
 set shiftwidth=2
 retab
 set expandtab
+
+" Highlight jsx in .js files as well
+let g:jsx_ext_required = 0
+
+" Ultisnips configuration
+let g:ExpandSnippetOrJump="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsEditSplit="vertical"
 
 " Set the leader from \ to '
 let mapleader = "'"

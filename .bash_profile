@@ -1,6 +1,7 @@
 # Docker
 eval "$(docker-machine env dev)"
-export DOCKER_HOST="tcp://192.168.99.100:2376"
+export DOCKER_HOST="tcp://192.168.64.3:2376"
+
 docker_clean() {
   # Kill all running containers
   docker ps --quiet | xargs docker kill
@@ -10,18 +11,19 @@ docker_clean() {
   docker images --quiet --filter "dangling=true" | xargs docker rmi
 }
 
-### Aliases
+## Aliases
 alias be="bundle exec "
 alias bake="bundle exec rake "
 alias bard="bundle exec guard"
 alias dake='docker-compose run --rm web bundle exec rake'
-alias dard='docker-compose run --rm web bundle exec guard -p -l 1'
+alias dard='docker-compose run --rm web bundle exec guard -p -l 10'
 alias de='docker-compose run --rm web bundle exec'
 alias fff="cd ~/Code "
 alias dbsetup='docker-compose run --rm web bin/setup'
+alias bongo='mongod --config /usr/local/etc/mongod.conf'
+alias rs='spring rspec'
 
 # Color LS
-# https://github.com/barryclark/bashstrap
 colorflag="-G"
 alias ls="command ls ${colorflag}"
 alias l="ls -lF ${colorflag}" # all files, in long format
@@ -30,6 +32,10 @@ alias lsd='ls -lF ${colorflag} | grep "^d"' # only directories
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '
+
+# Colored up cat!
+# You must install Pygments first - "sudo easy_install Pygments"
+alias c='pygmentize -O style=monokai -f console256 -g'
 
 ### Prompt Colors
 # Modified version of @gf3’s Sexy Bash Prompt
@@ -94,4 +100,5 @@ export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
 . ~/z.sh
 
 # rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"

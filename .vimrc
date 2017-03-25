@@ -6,7 +6,6 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'SirVer/ultisnips'
 Plug 'altercation/vim-colors-solarized'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'jeetsukumaran/vim-indentwise'
@@ -53,11 +52,6 @@ set expandtab
 
 " Highlight jsx in .js files as well
 let g:jsx_ext_required = 0
-
-" Ultisnips configuration
-let g:ExpandSnippetOrJump="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-let g:UltiSnipsEditSplit="vertical"
 
 " Set the leader from \ to '
 let mapleader = "'"

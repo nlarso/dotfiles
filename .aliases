@@ -1,0 +1,22 @@
+#navigation
+alias fff="cd ~/Code "
+
+#bundler/rails
+alias be="bundle exec "
+alias bake="bundle exec rake "
+alias rmpid='rm tmp/pids/server.pid'
+
+#docker specific bundler/rails
+alias dake='docker-compose run --rm web bundle exec rake'
+alias dbsetup='docker-compose run --rm web bin/setup'
+alias de='docker-compose run --rm web bundle exec'
+
+# Color LS
+colorflag="-G"
+alias ls="command ls ${colorflag}"
+alias l="ls -lF ${colorflag}" # all files, in long format
+alias la="ls -laF ${colorflag}" # all files inc dotfiles, in long format
+alias lsd='ls -lF ${colorflag} | grep "^d"' # only directories
+
+# misc
+alias sudo='sudo ' # allow aliases to be sudo'ed

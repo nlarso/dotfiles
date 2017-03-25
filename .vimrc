@@ -6,6 +6,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'andrewradev/splitjoin.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'jeetsukumaran/vim-indentwise'
@@ -15,7 +16,9 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'pangloss/vim-javascript'
 Plug 'scrooloose/nerdtree'
 Plug 'slim-template/vim-slim'
+Plug 'tmhedberg/matchit'
 Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-surround'
@@ -30,18 +33,10 @@ set t_Co=256
 set background=dark
 let g:solarized_termcolors=16
 colorscheme solarized
-
-set autowriteall        " save file on buffer switch
-set colorcolumn=81      " highlight 81st column to discourage long lines
-set expandtab           " insert spaces when tab key is pressed
-set hlsearch            " highlight all matches after entering search pattern
-set incsearch           " highlight while searching
-set nobackup            " get rid of annoying ~file
-set noswapfile          " get rid of annoying swap file
-set number              " display line numbers
+set colorcolumn=81
 
 " Tabs and indentation
-filetype indent on
+filetype plugin indent on
 set autoindent
 set backspace=start,indent,eol
 set tabstop=2
@@ -50,17 +45,20 @@ set shiftwidth=2
 retab
 set expandtab
 
-" Highlight jsx in .js files as well
-let g:jsx_ext_required = 0
+" Misc
+set autowriteall        " save file on buffer switch
+set expandtab           " insert spaces when tab key is pressed
+set hlsearch            " highlight all matches after entering search pattern
+set incsearch           " highlight while searching
+set nobackup            " get rid of annoying ~file
+set noswapfile          " get rid of annoying swap file
+set number              " display line numbers
 
 " Set the leader from \ to '
 let mapleader = "'"
 
 " Toggle NERDTree
 nnoremap <C-O> :NERDTreeToggle <CR>
-
-" Close all but current buffer
-nnoremap <leader>B :1,999bd<CR><C-^>
 
 " Git Grep (G[g]rep) the selection
 vnoremap <Leader>g y:Ggrep '<C-r>"'<CR>
@@ -76,8 +74,12 @@ imap jk <esc>
 imap jj <esc>j
 imap kk <esc>k
 
-" Highlight 81st column to discourage long lines.
-set colorcolumn=81
+" vim-jsx coniguration
+let g:jsx_ext_required = 0
 
-" Fix indentation across page
-map <Leader>i mmgg=G'm<CR>
+" rails.vim configuration
+let g:rails_projections = {
+\   "app/assets/javascripts/components/*.jsx": {
+\     "command": "react",
+\   }
+\}

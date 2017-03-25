@@ -1,0 +1,26 @@
+[core]
+	excludesfile = ~/.gitignore
+	whitespace = space-before-tab,indent-with-non-tab,trailing-space
+	editor = /usr/bin/vim
+[color]
+	ui = true
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+[color "diff"]
+	meta = yellow
+	frag = magenta
+	old = red
+	new = green
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+[user]
+	name = nlarso
+	email = nlarso@gmail.com
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true

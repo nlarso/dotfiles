@@ -96,9 +96,6 @@ export PS2="\[$ORANGE\]→ \[$RESET\]"
 # Only show the current directory's name in the tab
 export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
 
-# init z! (https://github.com/rupa/z)
-. ~/z.sh
-
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"

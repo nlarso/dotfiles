@@ -8,6 +8,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'andrewradev/splitjoin.vim'
 Plug 'altercation/vim-colors-solarized'
+Plug 'alvan/vim-closetag'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'jeetsukumaran/vim-indentwise'
 Plug 'kien/ctrlp.vim'
@@ -76,6 +77,9 @@ imap kk <esc>k
 
 " vim-jsx coniguration
 let g:jsx_ext_required = 0
+
+" vim-closetag configuration
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.js,*.jsx"
 
 " rails.vim configuration
 let g:rails_projections = {

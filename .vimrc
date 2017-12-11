@@ -46,6 +46,14 @@ set shiftwidth=2
 retab
 set expandtab
 
+" Split panes
+set splitbelow
+set splitright
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 " Misc
 set autowriteall        " save file on buffer switch
 set expandtab           " insert spaces when tab key is pressed

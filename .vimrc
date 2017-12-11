@@ -79,6 +79,12 @@ imap kk <esc>k
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 let g:markdown_fenced_languages = ['ruby', 'bash=sh']
 
+" NERDTree configuration
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+let g:NERDTreeWinSize=25
+nnoremap <C-O> :NERDTreeToggle <CR>
+
 " vim-jsx coniguration
 let g:jsx_ext_required = 0
 

@@ -95,5 +95,11 @@ let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.js,*.jsx"
 let g:rails_projections = {
 \   "app/assets/javascripts/components/*.jsx": {
 \     "command": "react",
+\   },
+\   "app/forms/*.rb": {
+\     "command": "form",
+\     "affinity": "model",
+\     "test":"test/forms/%i_test.rb",
+\     "related":"app/controllers/%p_controller.rb",
 \   }
 \}

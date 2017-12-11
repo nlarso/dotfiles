@@ -104,6 +104,10 @@ let g:rails_projections = {
 \   }
 \}
 
+" splitjoin.vim configuration
+let g:splitjoin_ruby_trailing_comma = 1
+let g:splitjoin_ruby_hanging_args = 0
+
 " Speed up CtrlP by using ag for listing files.
 " https://github.com/ggreer/the_silver_searcher
 if executable('ag')

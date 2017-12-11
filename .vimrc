@@ -34,7 +34,6 @@ set t_Co=256
 set background=dark
 let g:solarized_termcolors=16
 colorscheme solarized
-set colorcolumn=81
 
 " Tabs and indentation
 filetype plugin indent on
@@ -62,12 +61,12 @@ set incsearch           " highlight while searching
 set nobackup            " get rid of annoying ~file
 set noswapfile          " get rid of annoying swap file
 set number              " display line numbers
+set nofoldenable        " disable folding
+set mouse=a             " enable the mouse(...for now)
+set colorcolumn=80,100
 
 " Set the leader from \ to '
 let mapleader = "'"
-
-" Toggle NERDTree
-nnoremap <C-O> :NERDTreeToggle <CR>
 
 " Git Grep (G[g]rep) the selection
 vnoremap <Leader>g y:Ggrep '<C-r>"'<CR>
@@ -76,12 +75,15 @@ vnoremap <Leader>g y:Ggrep '<C-r>"'<CR>
 nnoremap <Leader>g :Ggrep <C-r><C-w><CR>
 
 " Clear highlighted search results
-nmap <Leader>h :nohlsearch<cr>
+nmap <Leader>h :nohlsearch<CR>
 
 " Shortcuts for getting out of insert mode quickly
 imap jk <esc>
 imap jj <esc>j
 imap kk <esc>k
+
+" Copy selection to system clipboard
+vnoremap <C-c> "+y
 
 " Treat *.md files as Markdown instead of Modula-2
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown

@@ -103,3 +103,11 @@ let g:rails_projections = {
 \     "related":"app/controllers/%p_controller.rb",
 \   }
 \}
+
+" Speed up CtrlP by using ag for listing files.
+" https://github.com/ggreer/the_silver_searcher
+if executable('ag')
+  set grepprg=ag
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_use_caching = 0
+endif

@@ -75,6 +75,10 @@ imap jk <esc>
 imap jj <esc>j
 imap kk <esc>k
 
+" Treat *.md files as Markdown instead of Modula-2
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+let g:markdown_fenced_languages = ['ruby', 'bash=sh']
+
 " vim-jsx coniguration
 let g:jsx_ext_required = 0
 

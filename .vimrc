@@ -64,6 +64,7 @@ set number              " display line numbers
 set nofoldenable        " disable folding
 set mouse=a             " enable the mouse(...for now)
 set colorcolumn=80,100
+set wildignore+=*/.git/*,*.jpg,*.png,*.zip,.DS_Store,./tmp/*
 
 " Set the leader from \ to '
 let mapleader = "'"

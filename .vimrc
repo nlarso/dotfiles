@@ -9,6 +9,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'andrewradev/splitjoin.vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'alvan/vim-closetag'
+Plug 'christoomey/vim-tmux-navigator'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'jeetsukumaran/vim-indentwise'
 Plug 'kien/ctrlp.vim'
@@ -64,7 +65,7 @@ set number              " display line numbers
 set nofoldenable        " disable folding
 set mouse=a             " enable the mouse(...for now)
 set colorcolumn=80,100
-set wildignore+=*/.git/*,*.jpg,*.png,*.zip,.DS_Store,./tmp/*
+set wildignore+=:*.jpg,*.png,*.zip,.DS_Store,./tmp/*
 
 " Set the leader from \ to '
 let mapleader = "'"

@@ -44,7 +44,6 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 retab
-set expandtab
 
 " Split panes
 set splitbelow

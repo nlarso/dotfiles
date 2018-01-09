@@ -67,8 +67,8 @@ set mouse=a             " enable the mouse(...for now)
 set colorcolumn=80,100
 set wildignore+=:*.jpg,*.png,*.zip,.DS_Store,./tmp/*
 
-" Set the leader from \ to '
-let mapleader = "'"
+" Set the spacebar key as the leader
+let mapleader = " "
 
 " Git Grep (G[g]rep) the selection
 vnoremap <Leader>g y:Ggrep '<C-r>"'<CR>

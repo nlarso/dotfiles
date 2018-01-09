@@ -91,6 +91,15 @@ vnoremap <C-c> "+y
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 let g:markdown_fenced_languages = ['ruby', 'bash=sh']
 
+" Resize panes when vim is resized
+autocmd VimResized * :wincmd =
+
+" Zoom a vim pane
+nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
+
+" Reblance all open vim panes
+nnoremap <leader>= :wincmd =<cr>
+
 " NERDTree configuration
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1

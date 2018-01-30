@@ -1,17 +1,16 @@
 #navigation
 alias fff="cd ~/Code "
 
-#bundler/rails
-alias be="bundle exec "
+#rails/docker
 alias bake="bundle exec rake "
+alias dails='docker-compose run --rm web rails'
+alias dake='docker-compose run --rm web rake'
+alias dash='docker-compose run --rm web bash -i -c'
+alias dbsetup='docker-compose run --rm web bin/setup'
+alias dcr='docker-compose run --rm web'
 alias rmpid='rm tmp/pids/server.pid'
 
-#docker specific bundler/rails
-alias dake='docker-compose run --rm web bundle exec rake'
-alias dbsetup='docker-compose run --rm web bin/setup'
-alias de='docker-compose run --rm web bundle exec'
-
-# Color LS
+# color ls
 colorflag="-G"
 alias ls="command ls ${colorflag}"
 alias l="ls -lF ${colorflag}" # all files, in long format

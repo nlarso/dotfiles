@@ -66,6 +66,7 @@ set nofoldenable        " disable folding
 set mouse=a             " enable the mouse(...for now)
 set colorcolumn=80,100
 set wildignore+=:*.jpg,*.png,*.zip,.DS_Store,./tmp/*,**/node_modules
+set ruler
 
 " Set the spacebar key as the leader
 let mapleader = " "

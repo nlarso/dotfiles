@@ -55,7 +55,6 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " Misc
-set autowriteall        " save file on buffer switch
 set expandtab           " insert spaces when tab key is pressed
 set hlsearch            " highlight all matches after entering search pattern
 set incsearch           " highlight while searching
@@ -68,8 +67,14 @@ set colorcolumn=80,100
 set wildignore+=:*.jpg,*.png,*.zip,.DS_Store,./tmp/*,**/node_modules
 set ruler
 
+" FileTypes
+autocmd BufNewFile,BufRead *.tt set syntax=ruby
+
 " Set the spacebar key as the leader
 let mapleader = " "
+
+" Highlight the current column on demand
+nnoremap <Leader>c :set cursorcolumn!<CR>
 
 " Git Grep (G[g]rep) the selection
 vnoremap <Leader>g y:Ggrep '<C-r>"'<CR>

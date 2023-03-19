@@ -2,6 +2,8 @@
 	excludesfile = ~/.gitignore
 	whitespace = space-before-tab,indent-with-non-tab,trailing-space
 	editor = /usr/bin/vim
+[alias]
+  gone = "!f() { git fetch --all --prune; git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D; }; f"
 [color]
 	ui = true
 [color "branch"]
@@ -18,7 +20,7 @@
 	changed = green
 	untracked = cyan
 [user]
-	name = nlarso
+	name = Nick Larson
 	email = nlarso@gmail.com
 [filter "lfs"]
 	clean = git-lfs clean %f

@@ -1,6 +1,5 @@
 if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall
 endif
 
@@ -32,9 +31,7 @@ call plug#end()
 
 " Colors
 syntax enable
-set t_Co=256
 set background=dark
-let g:solarized_termcolors=16
 colorscheme solarized
 
 " Tabs and indentation
@@ -63,12 +60,13 @@ set noswapfile          " get rid of annoying swap file
 set number              " display line numbers
 set nofoldenable        " disable folding
 set mouse=a             " enable the mouse(...for now)
-set colorcolumn=80,100
+set colorcolumn=80,120
 set wildignore+=:*.jpg,*.png,*.zip,.DS_Store,./tmp/*,**/node_modules
 set ruler
 
 " FileTypes
 autocmd BufNewFile,BufRead *.tt set syntax=ruby
+autocmd BufNewFile,BufRead *.prawn set syntax=ruby
 
 " Set the spacebar key as the leader
 let mapleader = " "
@@ -106,23 +104,20 @@ nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 " Reblance all open vim panes
 nnoremap <leader>= :wincmd =<cr>
 
+" Close all but current buffer
+nnoremap <leader>B :1,999bd<CR><C-^>
+
 " NERDTree configuration
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let g:NERDTreeWinSize=25
 nnoremap <C-O> :NERDTreeToggle <CR>
 
-" vim-jsx coniguration
-let g:jsx_ext_required = 0
-
 " vim-closetag configuration
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.js,*.jsx"
 
 " rails.vim configuration
 let g:rails_projections = {
-\   "app/assets/javascripts/components/*.jsx": {
-\     "command": "react",
-\   },
 \   "app/forms/*.rb": {
 \     "command": "form",
 \     "affinity": "model",
@@ -134,6 +129,7 @@ let g:rails_projections = {
 " splitjoin.vim configuration
 let g:splitjoin_ruby_trailing_comma = 1
 let g:splitjoin_ruby_hanging_args = 0
+let g:splitjoin_ruby_curly_braces = 0
 
 " Speed up CtrlP by using ag for listing files.
 " https://github.com/ggreer/the_silver_searcher
@@ -142,3 +138,7 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
   let g:ctrlp_use_caching = 0
 endif
+
+" vim-ruby configuration
+let g:ruby_indent_hanging_elements = 0
+let g:ruby_indent_assignment_style = 'variable'

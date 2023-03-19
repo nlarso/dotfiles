@@ -2,10 +2,3 @@
 function command_exists () {
   type "$1" &> /dev/null ;
 }
-
-# clean up after Docker
-docker_clean() {
-  docker ps --quiet | xargs docker kill
-  docker ps --all --quiet --no-trunc | xargs docker rm
-  docker images --quiet --filter "dangling=true" | xargs docker rmi
-}

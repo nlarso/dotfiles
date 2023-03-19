@@ -2,13 +2,8 @@
 alias fff="cd ~/Code "
 
 #rails/docker
-alias bake="bundle exec rake "
-alias dails='docker-compose run --rm web rails'
-alias dake='docker-compose run --rm web rake'
-alias dash='docker-compose run --rm web bash -i -c'
-alias dbsetup='docker-compose run --rm web bin/setup'
-alias dcr='docker-compose run --rm web'
-alias rmpid='rm tmp/pids/server.pid'
+alias dails='docker compose exec web rails'
+alias dcr='docker compose exec web'
 
 # color ls
 colorflag="-G"

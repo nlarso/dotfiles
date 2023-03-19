@@ -4,10 +4,6 @@ for file in ~/.{functions,bash_prompt,aliases}; do
 done;
 unset file;
 
-if command_exists docker-machine ; then
-  eval "$(docker-machine env dev)"
-fi
-
 # rbenv
 if command_exists rbenv ; then
   export PATH="$HOME/.rbenv/bin:$PATH"
